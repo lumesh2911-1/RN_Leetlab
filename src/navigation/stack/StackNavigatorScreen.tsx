@@ -12,7 +12,7 @@ export default function StackNavigatorScreen() {
          <Stack.Screen
         name="drawer"
         component={DrawerNavigatorScreen}
-        options={{ headerShown: false }}
+   
       />
       <Stack.Screen
         name="bottom"
