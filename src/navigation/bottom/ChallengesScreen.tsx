@@ -1,14 +1,30 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, View } from 'react-native';
+import React from 'react';
+import { moderateScale } from 'react-native-size-matters';
+import { useTheme } from '../../context/ThemeContext';
+import AppText from '../../components/AppText';
 
 const ChallengesScreen = () => {
+  const { colors } = useTheme();
+
   return (
-    <View>
-      <Text>ChallengesScreen</Text>
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <AppText style={[styles.text, { color: colors.text }]}>
+        ChallengesScreen
+      </AppText>
     </View>
-  )
-}
+  );
+};
 
-export default ChallengesScreen
+export default ChallengesScreen;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    fontSize: moderateScale(16),
+  },
+});

@@ -1,13 +1,17 @@
-import { View, Text } from 'react-native';
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { ThemeProvider } from './src/context/ThemeContext';
+import AppStatusBar from './src/components/AppStatusBar';
 import RootNavigationScreen from './src/navigation/RootNavigationScreen';
 
 const App = () => {
   return (
-    <SafeAreaProvider>
-      <RootNavigationScreen />
-    </SafeAreaProvider>
+    <ThemeProvider>
+      <SafeAreaProvider>
+        <AppStatusBar />
+        <RootNavigationScreen />
+      </SafeAreaProvider>
+    </ThemeProvider>
   );
 };
 

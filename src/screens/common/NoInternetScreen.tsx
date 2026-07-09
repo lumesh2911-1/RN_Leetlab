@@ -1,12 +1,30 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { StyleSheet, View } from 'react-native';
+import React from 'react';
+import { moderateScale } from 'react-native-size-matters';
+import { useTheme } from '../../context/ThemeContext';
+import AppText from '../../components/AppText';
 
 const NoInternetScreen = () => {
-  return (
-    <View>
-      <Text>NoInternetScreen</Text>
-    </View>
-  )
-}
+  const { colors } = useTheme();
 
-export default NoInternetScreen
+  return (
+    <View style={[styles.container, { backgroundColor: colors.background }]}>
+      <AppText style={[styles.text, { color: colors.text }]}>
+        NoInternetScreen
+      </AppText>
+    </View>
+  );
+};
+
+export default NoInternetScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    fontSize: moderateScale(16),
+  },
+});
