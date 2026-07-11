@@ -28,11 +28,11 @@ const user = {
 
 const accountItems = [
   {
-    id: 'personal-info',
+    id: 'personalInfo',
     icon: User,
     title: 'Personal Info',
     subtitle: 'Name, email, photo',
-    route: 'personal-info',
+    route: 'personalInfo',
   },
   {
     id: 'notifications',
@@ -45,25 +45,25 @@ const accountItems = [
 
 const chargeXItems = [
   {
-    id: 'help-and-support',
+    id: 'helpAndSupport',
     icon: HelpCircle,
     title: 'Help & Support',
     subtitle: 'Contact, FAQs, report issues',
-    route: 'help-and-support',
+    route: 'helpAndSupport',
   },
   {
-    id: 'terms-and-conditions',
+    id: 'termsAndConditions',
     icon: FileText,
     title: 'Terms & Conditions',
     subtitle: 'Usage rules and agreements',
-    route: 'terms-and-conditions',
+    route: 'termsAndConditions',
   },
   {
-    id: 'privacy-policy',
+    id: 'privacyPolicy',
     icon: Shield,
     title: 'Privacy Policy',
     subtitle: 'How we handle your data',
-    route: 'privacy-policy',
+    route: 'privacyPolicy',
   },
 ];
 
