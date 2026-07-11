@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import SplashScreen from '../../screens/common/SplashScreen';
 import BottomNavigatorScreen from '../bottom/BottomNavigatorScreen';
 import LoginScreen from '../../screens/auth/LoginScreen';
+import NotificationScreen from '../../screens/main/NotificationScreen';
 
 const Stack = createStackNavigator();
 export default function StackNavigatorScreen() {
@@ -15,24 +16,25 @@ export default function StackNavigatorScreen() {
   }, []);
   return (
     <Stack.Navigator>
-      {showSplash && ( 
+      {showSplash && (
         <Stack.Screen
           name="splash"
           component={SplashScreen}
           options={{ headerShown: false }}
         />
-      )} 
+      )}
       <Stack.Screen
         name="login"
         component={LoginScreen}
         options={{ headerShown: false }}
       />
-       <Stack.Screen
+      <Stack.Screen
         name="bottomNavigator"
         component={BottomNavigatorScreen}
         options={{ headerShown: false }}
       />
-       </Stack.Navigator>
+      <Stack.Screen name="notification" component={NotificationScreen} />
+    </Stack.Navigator>
   );
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {  CodeXml, House, LucideProps, Trophy, User } from 'lucide-react-native';
+import { CodeXml, House, LucideProps, Trophy, User } from 'lucide-react-native';
 import { moderateScale } from 'react-native-size-matters';
 import HomeScreen from './HomeScreen';
 import ProblemScreen from './ProblemScreen';
@@ -8,6 +8,7 @@ import ChallengesScreen from './ChallengesScreen';
 import ProfileScreen from './ProfileScreen';
 import { useTheme } from '../../context/ThemeContext';
 import { FONTS } from '../../constants/fonts';
+import Header from '../../components/Header';
 
 const Tab = createBottomTabNavigator();
 const ICON_SIZE = moderateScale(24);
@@ -31,13 +32,18 @@ const BottomNavigatorScreen = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: colors.surface, },
-        headerTintColor: colors.text,
-        headerTitleStyle: { fontFamily: FONTS.semiBold, },
-        tabBarStyle: { backgroundColor: colors.surface, height: moderateScale(85),paddingTop: moderateScale(13),},
+        header: props => <Header {...props} />,
+        tabBarStyle: {
+          backgroundColor: colors.surface,
+          height: moderateScale(85),
+          paddingTop: moderateScale(13),
+        },
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.text,
-        tabBarLabelStyle: { fontFamily: FONTS.medium, fontSize: moderateScale(11) },
+        tabBarLabelStyle: {
+          fontFamily: FONTS.medium,
+          fontSize: moderateScale(11),
+        },
         tabBarIconStyle: { marginBottom: moderateScale(4) },
       }}
     >

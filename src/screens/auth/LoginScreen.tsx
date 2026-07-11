@@ -28,7 +28,10 @@ const LoginScreen = () => {
           resizeMode="contain"
         />
 
-        <AppText weight="extraBold" style={[styles.title, { color: colors.text }]}>
+        <AppText
+          weight="extraBold"
+          style={[styles.title, { color: colors.text }]}
+        >
           LeetLab
         </AppText>
 
@@ -59,21 +62,31 @@ const LoginScreen = () => {
 
       <View style={styles.footer}>
         <View style={styles.dividerRow}>
-          <View style={[styles.dividerLine, { backgroundColor: colors.text }]} />
+          <View
+            style={[styles.dividerLine, { backgroundColor: colors.text }]}
+          />
           <AppText
             weight="regular"
             style={[styles.dividerText, { color: colors.text }]}
           >
             Continue with
           </AppText>
-          <View style={[styles.dividerLine, { backgroundColor: colors.text }]} />
+          <View
+            style={[styles.dividerLine, { backgroundColor: colors.text }]}
+          />
         </View>
 
         <Pressable
-          style={[styles.authButton, styles.googleButton , {borderWidth: moderateScale(1.5), borderColor: colors.text}]}
+          style={[
+            styles.authButton,
+            styles.googleButton,
+            isDark
+              ? {}
+              : { borderWidth: moderateScale(1.5), borderColor: colors.text },
+          ]}
           android_ripple={{ color: '#E5E5E5' }}
           onPress={() => {
-           navigation.navigate('bottomNavigator');
+            navigation.navigate('bottomNavigator');
           }}
         >
           <Image
@@ -87,7 +100,13 @@ const LoginScreen = () => {
         </Pressable>
 
         <Pressable
-          style={[styles.authButton,  styles.googleButton, {borderWidth: moderateScale(1.5), borderColor: colors.text}]}
+          style={[
+            styles.authButton,
+            styles.googleButton,
+            isDark
+              ? {}
+              : { borderWidth: moderateScale(1.5), borderColor: colors.text },
+          ]}
           android_ripple={{ color: isDark ? '#2A2A2E' : '#E5E5E5' }}
         >
           <Image
@@ -95,12 +114,10 @@ const LoginScreen = () => {
             style={styles.authIcon}
             resizeMode="contain"
           />
-          <AppText
-            weight="semiBold" style={styles.googleButtonText}
-          >
+          <AppText weight="semiBold" style={styles.googleButtonText}>
             Continue with GitHub
           </AppText>
-        </Pressable>      
+        </Pressable>
       </View>
     </SafeAreaView>
   );
@@ -118,11 +135,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: moderateScale(58),
   },
   logo: {
     width: moderateScale(90),
     height: moderateScale(90),
-    marginBottom: moderateScale(10),
   },
   title: {
     fontSize: moderateScale(28),
@@ -167,7 +184,6 @@ const styles = StyleSheet.create({
   },
   dividerText: {
     fontSize: moderateScale(13),
-    
   },
   authButton: {
     flexDirection: 'row',
