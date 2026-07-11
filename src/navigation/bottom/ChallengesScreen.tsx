@@ -78,7 +78,12 @@ const ChallengesScreen = () => {
         })}
       </View>
 
-      <View style={[styles.card, { backgroundColor: colors.surface }]}>
+      <View
+        style={[
+          styles.card,
+          { backgroundColor: colors.surface, borderColor: colors.text + '10' },
+        ]}
+      >
         <View style={styles.cardHeader}>
           <View style={styles.headerLeft}>
             <View
@@ -206,7 +211,7 @@ const styles = StyleSheet.create({
   card: {
     borderRadius: moderateScale(15),
     padding: moderateScale(20),
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: moderateScale(1),
   },
   cardHeader: {
     flexDirection: 'row',

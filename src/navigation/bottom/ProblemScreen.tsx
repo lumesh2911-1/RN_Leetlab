@@ -95,7 +95,16 @@ const ProblemScreen = () => {
           </AppText>
         }
         renderItem={({ item }) => (
-          <View style={[styles.card, { backgroundColor: colors.surface }]}>
+          <View
+            style={[
+              styles.card,
+              {
+                backgroundColor: colors.surface,
+                backgroundColor: colors.surface,
+                borderColor: colors.text + '10',
+              },
+            ]}
+          >
             <View style={styles.cardHeader}>
               <AppText
                 weight="semiBold"
@@ -176,7 +185,7 @@ const styles = StyleSheet.create({
     borderRadius: moderateScale(10),
     padding: moderateScale(18),
     marginBottom: moderateScale(14),
-    borderWidth: StyleSheet.hairlineWidth,
+    borderWidth: moderateScale(1),
   },
   cardHeader: {
     flexDirection: 'row',
