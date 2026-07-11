@@ -100,7 +100,6 @@ const ProblemScreen = () => {
               styles.card,
               {
                 backgroundColor: colors.surface,
-                backgroundColor: colors.surface,
                 borderColor: colors.text + '10',
               },
             ]}
