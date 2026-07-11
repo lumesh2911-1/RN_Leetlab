@@ -4,12 +4,16 @@ import { useTheme } from '../context/ThemeContext';
 
 export default function AppStatusBar() {
   const { colors, isDark } = useTheme();
+  const statusBarStyle = isDark ? 'light-content' : 'dark-content';
+  const statusBarBackground =
+    Platform.OS === 'android' ? colors.surface : undefined;
 
   return (
     <StatusBar
       animated
-      barStyle={isDark ? 'light-content' : 'dark-content'}
-      backgroundColor={Platform.OS === 'android' ? colors.background : undefined}
+      barStyle={statusBarStyle}
+      backgroundColor={statusBarBackground}
+      translucent={false}
     />
   );
 }

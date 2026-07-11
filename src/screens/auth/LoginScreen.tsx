@@ -77,13 +77,7 @@ const LoginScreen = () => {
         </View>
 
         <Pressable
-          style={[
-            styles.authButton,
-            styles.googleButton,
-            isDark
-              ? {}
-              : { borderWidth: moderateScale(1.5), borderColor: colors.text },
-          ]}
+          style={[styles.authButton, styles.googleButton]}
           android_ripple={{ color: '#E5E5E5' }}
           onPress={() => {
             navigation.navigate('bottomNavigator');
@@ -100,13 +94,7 @@ const LoginScreen = () => {
         </Pressable>
 
         <Pressable
-          style={[
-            styles.authButton,
-            styles.googleButton,
-            isDark
-              ? {}
-              : { borderWidth: moderateScale(1.5), borderColor: colors.text },
-          ]}
+          style={[styles.authButton, styles.googleButton]}
           android_ripple={{ color: isDark ? '#2A2A2E' : '#E5E5E5' }}
         >
           <Image
@@ -196,6 +184,7 @@ const styles = StyleSheet.create({
   },
   googleButton: {
     backgroundColor: '#FFFFFF',
+    borderWidth: StyleSheet.hairlineWidth,
   },
   authIcon: {
     width: moderateScale(20),

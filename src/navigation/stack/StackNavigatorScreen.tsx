@@ -5,6 +5,10 @@ import SplashScreen from '../../screens/common/SplashScreen';
 import BottomNavigatorScreen from '../bottom/BottomNavigatorScreen';
 import LoginScreen from '../../screens/auth/LoginScreen';
 import NotificationScreen from '../../screens/main/NotificationScreen';
+import HelpAndSupportScreen from '../../screens/main/profile/HelpAndSupportScreen';
+import PrivacyAndPolicyScreen from '../../screens/main/profile/PrivacyAndPolicyScreen';
+import ProfileInfoScreen from '../../screens/main/profile/ProfileInfoScreen';
+import TermsAndConditionScreen from '../../screens/main/profile/TermsAndConditionScreen';
 
 const Stack = createStackNavigator();
 export default function StackNavigatorScreen() {
@@ -33,7 +37,16 @@ export default function StackNavigatorScreen() {
         component={BottomNavigatorScreen}
         options={{ headerShown: false }}
       />
-      <Stack.Screen name="notification" component={NotificationScreen} />
+      <Stack.Screen name="notifications" component={NotificationScreen} />
+
+      {/* Profile Section */}
+      <Stack.Screen name="help-and-support" component={HelpAndSupportScreen} />
+      <Stack.Screen name="privacy-policy" component={PrivacyAndPolicyScreen} />
+      <Stack.Screen name="personal-info" component={ProfileInfoScreen} />
+      <Stack.Screen
+        name="terms-and-conditions"
+        component={TermsAndConditionScreen}
+      />
     </Stack.Navigator>
   );
 }

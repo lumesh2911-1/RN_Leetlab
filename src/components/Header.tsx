@@ -52,7 +52,7 @@ const Header = ({ route, options }: Props) => {
         <View style={styles.right}>
           <TouchableOpacity
             style={styles.iconButton}
-            onPress={() => navigation.navigate('notification')}
+            onPress={() => navigation.navigate('notifications')}
           >
             <BellDot size={moderateScale(20)} color={colors.text} />
           </TouchableOpacity>
